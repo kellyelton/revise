@@ -1,0 +1,6 @@
+/src/*.ncrunchsolution
+/src/Revise/bin/Debug
+
+/src/Revise/obj/Debug/*.cache
+
+/src/Revise/obj/Debug
