@@ -25,7 +25,6 @@ try
 
 	#Deploy package
 	Write-Output "Deploying..."
-	Move-Item *.nupkg "\\fileserver.efile.aatrix.lan\DATA (E)\Distribution\LibFeed" -force
 	Write-Output "Deployed"
 	exit 0
 }
