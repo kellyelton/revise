@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Revise")]
+[assembly: AssemblyTitle("Revise.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Revise")]
+[assembly: AssemblyProduct("Revise.Test")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,8 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2aed2604-15c3-46d5-8949-f43e457d3b8e")]
-[assembly:InternalsVisibleTo("Revise.Test")]
+[assembly: Guid("c20915d8-f495-41b0-8a13-66608e4804b7")]
 
 // Version information for an assembly consists of the following four values:
 //
