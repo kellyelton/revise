@@ -7,3 +7,4 @@
 /src/Revise.Test/bin/Debug
 /src/Revise.Test/obj/Debug
 /src/*.suo
+/src/*.user
