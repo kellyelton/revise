@@ -58,14 +58,12 @@ namespace Revise.Deployment
         /// <returns><see cref="DeploymentManagerConfigBuilder"/></returns>
 		public DeploymentManagerConfigBuilder IncludeFile(params string[] relativePath)
 		{
-			foreach (var path in relativePath.Select(rPath => Path.Combine(Config.WorkingDirectory.AbsolutePath, rPath)))
+			foreach (var path in relativePath.Select(rPath => Path.Combine(Config.WorkingDirectory.AbsolutePath, rPath)).Select(x=>new FileInfo(x)))
 			{
-				if (!Directory.Exists(path))
-					throw new DirectoryNotFoundException("Directory " + path + " now found.");
-				if (!File.Exists(path))
+				if(!path.Exists)
 					throw new FileNotFoundException("File " + path + " not found.");
 
-				Config.IncludeFiles.Add(new Uri(path));
+				Config.IncludeFiles.Add(new Uri(path.FullName));
 			}
 			return this;
 		}
@@ -77,16 +75,14 @@ namespace Revise.Deployment
         /// <returns><see cref="DeploymentManagerConfigBuilder"/></returns>
 		public DeploymentManagerConfigBuilder ExcludeFile(params string[] relativePath)
 		{
-			foreach (var path in relativePath.Select(rPath => Path.Combine(Config.WorkingDirectory.AbsolutePath, rPath)))
-			{
-				if (!Directory.Exists(path))
-					throw new DirectoryNotFoundException("Directory " + path + " now found.");
-				if (!File.Exists(path))
-					throw new FileNotFoundException("File " + path + " not found.");
+            foreach (var path in relativePath.Select(rPath => Path.Combine(Config.WorkingDirectory.AbsolutePath, rPath)).Select(x => new FileInfo(x)))
+            {
+                if (!path.Exists)
+                    throw new FileNotFoundException("File " + path + " not found.");
 
-				Config.ExcludeFiles.Add(new Uri(path));
-			}
-			return this;
+                Config.ExcludeFiles.Add(new Uri(path.FullName));
+            }
+            return this;
 		}
 
         /// <summary>

@@ -8,3 +8,6 @@
 /src/Revise.Test/obj/Debug
 /src/*.suo
 /src/*.user
+/src/Revise.Test/*.ncrunchproject
+/src/Revise/*.ncrunchproject
+/src/_NCrunch_Revise/*.cache

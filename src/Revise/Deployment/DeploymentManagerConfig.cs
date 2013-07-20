@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Revise.Deployment
 {
-	public class DeploymentManagerConfig
+	internal class DeploymentManagerConfig
 	{
 		public Uri WorkingDirectory { get; internal set; }
 		public List<Uri> IncludeFiles { get; internal set; }
@@ -15,7 +15,7 @@ namespace Revise.Deployment
 		{
 			IncludeFiles = new List<Uri>();
 			ExcludeFiles = new List<Uri>();
-			WorkingDirectory = new Uri(new FileInfo(Assembly.GetEntryAssembly().Location).Directory.FullName);
+            WorkingDirectory = new Uri(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
 		}
 	}
 }
